@@ -20,7 +20,7 @@ function NavBar() {
             <Nav.Link href="#clothes">Ropa</Nav.Link>
           </Nav>
           <CartWigdet color="success" size="large" />
-          {" 0"}
+          {"   0"}
         </Container>
       </Navbar>
     </>

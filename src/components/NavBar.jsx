@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../assets/logoML_2.png";
+import CartWigdet from "./CartWidget";
 
 function NavBar() {
   return (
@@ -18,6 +19,8 @@ function NavBar() {
             <Nav.Link href="#tech">Tecnología</Nav.Link>
             <Nav.Link href="#clothes">Ropa</Nav.Link>
           </Nav>
+          <CartWigdet color="success" size="large" />
+          {" 0"}
         </Container>
       </Navbar>
     </>

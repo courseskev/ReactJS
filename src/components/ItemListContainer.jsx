@@ -6,7 +6,8 @@ import Swal from "sweetalert2";
 
 const ItemListContainer = (props) => {
   const onAdd = (message) => {
-    alert(message);
+    //alert(message);
+    Swal.fire({ text: `Número de productos: ${message}` });
   };
   return (
     <>

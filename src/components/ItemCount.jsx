@@ -4,16 +4,18 @@ import Card from "react-bootstrap/Card";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [counter, setCounter] = useState(initial);
+
+  const onAddCall = () => {
+    onAdd(counter);
+  };
   const increaseCounter = () => {
     if (counter < stock) {
       setCounter(counter + 1);
-      onAdd(counter + 1);
     }
   };
   const decreaseCounter = () => {
     if (counter > initial) {
       setCounter(counter - 1);
-      onAdd(counter - 1);
     }
   };
   return (
@@ -52,6 +54,13 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             +
           </Button>
         </Card.Body>
+        <Button
+          style={{ margin: "auto" }}
+          variant="primary"
+          onClick={onAddCall}
+        >
+          Agregar al Carrito
+        </Button>
       </Card>
       ;
     </>

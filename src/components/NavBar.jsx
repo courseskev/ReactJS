@@ -19,7 +19,7 @@ function NavBar() {
             <Nav.Link href="#tech">Tecnología</Nav.Link>
             <Nav.Link href="#clothes">Ropa</Nav.Link>
           </Nav>
-          <CartWigdet color="success" size="large" />
+          <CartWigdet color="primary" size="large" />
           {"0"}
         </Container>
       </Navbar>

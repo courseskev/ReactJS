@@ -13,7 +13,7 @@ const ItemListContainer = (props) => {
   const [p, setP] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.mercadolibre.com/sites/MCO/search?q=smartphone&limit=3")
+    fetch("https://api.mercadolibre.com/sites/MCO/search?q=tech&limit=12")
       .then((res) => res.json())
       .then((data) => setP(data.results))
       .catch((err) => console.error(err));

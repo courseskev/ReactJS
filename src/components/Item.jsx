@@ -1,11 +1,14 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 
-const Item = ({ results, query }) => {
+const Item = ({ results }) => {
+  console.log("item", results);
+  const urlImage =
+    "https://http2.mlstatic.com/D_NQ_NP_" + results.thumbnail_id + "-O.webp";
+
   return (
     <>
       <Card
-        key={results.id}
         style={{
           width: "18rem",
           float: "left",
@@ -15,16 +18,16 @@ const Item = ({ results, query }) => {
       >
         <Card.Img
           variant="top"
-          src={results.thumbnail}
+          src={urlImage}
           style={{ objectFit: "contain", height: "300px" }}
         />
         <Card.Body>
-          <Card.Title>{query}</Card.Title>
-          <Card.Text>{results.title}</Card.Text>
+          <Card.Title>{results.title}</Card.Title>
+          <Card.Text>Precio: {results.price} COP</Card.Text>
         </Card.Body>
 
         <Card.Body>
-          <Card.Link href="#">Conocer más detalles</Card.Link>
+          <Card.Link href={results.permalink}>Conocer más detalles</Card.Link>
         </Card.Body>
       </Card>
     </>

@@ -1,14 +1,14 @@
 import React from "react";
 import Item from "./Item";
 
-const ItemList = ({ product }) => {
+const ItemList = ({ productos }) => {
+  console.log(productos);
   return (
     <>
-      <>
-        {product.map((p) => {
-          return <Item results={p.results} query={p.query} />;
-        })}
-      </>
+      <h1>itemlist</h1>
+      {Object.values(productos).map((p) => (
+        <Item results={p} key={p.id} />
+      ))}
     </>
   );
 };

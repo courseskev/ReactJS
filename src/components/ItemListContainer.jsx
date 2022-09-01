@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import ItemCount from "./ItemCount";
 import Swal from "sweetalert2";
 import ItemList from "./ItemList";
-import ItemDetailContainer from "./ItemDetailContainer";
 
 const ItemListContainer = (props) => {
   const onAdd = (message) => {
@@ -12,32 +11,17 @@ const ItemListContainer = (props) => {
   };
 
   const [p, setP] = useState([]);
+
   useEffect(() => {
-    new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(
-          fetch(
-            "https://api.mercadolibre.com/sites/MCO/search?q=smartphone&limit=3"
-          )
-            .then((res) => {
-              return res.json();
-            })
-            .then((data) => {
-              setP(data);
-              console.log(data);
-            })
-            .catch((err) => {
-              console.error(err);
-            })
-        );
-      }, 2000);
-    });
+    fetch("https://api.mercadolibre.com/sites/MCO/search?q=smartphone&limit=3")
+      .then((res) => res.json())
+      .then((data) => setP(data.results))
+      .catch((err) => console.error(err));
   }, []);
 
   return (
     <>
-      <ItemList product={p} />
-      <ItemDetailContainer productos={p} />
+      <ItemList productos={p} />
     </>
   );
 };

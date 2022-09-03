@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import Card from "react-bootstrap/Card";
 
 const Item = ({ results }) => {
   const urlImage =
     "https://http2.mlstatic.com/D_NQ_NP_" + results.thumbnail_id + "-O.webp";
+
+  //console.log(results);
 
   return (
     <>
@@ -25,7 +28,7 @@ const Item = ({ results }) => {
           <Card.Title>{results.title}</Card.Title>
           <br />
           <Card.Text>Precio: {results.price} COP</Card.Text>
-          <Card.Link href={results.permalink}>Conocer más detalles</Card.Link>
+          <Link to={`/item/${results.id}`}>Conocer más detalles</Link>
         </Card.Body>
       </Card>
     </>

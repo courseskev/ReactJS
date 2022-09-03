@@ -1,7 +1,11 @@
 import React from "react";
 
-function ItemDetail() {
-  return <div>ItemDetail</div>;
-}
+const ItemDetail = ({ item }) => {
+  return (
+    <>
+      <div>{item.id}</div>
+    </>
+  );
+};
 
 export default ItemDetail;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
-import ItemCount from "./ItemCount";
+//import CircularProgress from "@mui/material/CircularProgress";
+//import Box from "@mui/material/Box";
+//import ItemCount from "./ItemCount";
 import Swal from "sweetalert2";
 import ItemList from "./ItemList";
 
@@ -13,7 +13,7 @@ const ItemListContainer = (props) => {
   const [p, setP] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.mercadolibre.com/sites/MCO/search?q=tech&limit=12")
+    fetch("https://api.mercadolibre.com/sites/MCO/search?q=tech&limit=1")
       .then((res) => res.json())
       .then((data) => setP(data.results))
       .catch((err) => console.error(err));
